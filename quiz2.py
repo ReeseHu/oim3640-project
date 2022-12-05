@@ -47,9 +47,15 @@ def run(result_list):
 def display(personality_type):
     return(f'Your personality type is {personality_type}.')
 
-personality = run(result_list)
-print(display(personality))
+# personality = run(result_list)
+# print(display(personality))
 
+def main():
+    personality = run(result_list)
+    print(display(personality))
+
+if __name__ == '__main__':
+    main()
 
 
 

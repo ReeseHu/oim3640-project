@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
-from quiz2 import run
+from quiz import display
 
-
+import sys
+import os
 app = Flask(__name__)
+
+quiz_host = os.environ.get('FLASK_HOST')
+quiz_port = os.environ.get('FLASK_PORT')
 
 questions = [
         {
@@ -90,26 +94,70 @@ questions = [
         "b.": "Hope to be spontaneous"
         }
 ]
-
-@app.route('/', methods=['POST','GET'])
-def mbta_station():
-    if request.method=='GET':
-        return render_template('homepage.html')
+    
+    
+@app.route("/quiz", methods=['POST', 'GET'])
+def quiz():
+    
+    if request.method == 'GET':
+        return render_template("homepage.html", data=questions)
     else:
-        result_list=[]
-        for question in questions:
-            result_list.append(request.form[question.get])
-            answer=run(result_list)
-        return render_template('result.html',type=answer)
-        # except IndexError:
-        # # if the input is wrong or not in the database
-        #     return render_template('error.html')
+        result = 0
+        total = 0
 
-    return render_template('homepage.html')
+    count_of_a: int = 0
+    count_of_b: int = 0
+    personality: str = ''
+    count = 0
+
+    for question in questions:
+        answer = ''
+        while not (answer == 'a' or answer == 'b'):
+            count_of_a = 0
+            count_of_b = 0
+            try:
+                answer = input(question).lower()
+                if not (answer == 'a' or answer == 'b'):
+                    raise ValueError("Invalid input")
+            except ValueError as error:
+                print(error)
+        if answer == 'a':
+            count_of_a = count_of_a + 1
+        if answer == 'b':
+            count_of_b = count_of_b + 1
+        count = count + 1
+
+        if count == 3:
+            if count_of_a > count_of_b:
+                personality = personality + 'E '
+            else:
+                personality = personality + 'I '
+        else:
+            if count == 6:
+                if count_of_a > count_of_b:
+                    personality = personality + 'S '
+                else:
+                    personality = personality + 'N '
+            else:
+                if count == 9:
+                    if count_of_a > count_of_b:
+                        personality = personality + 'T '
+                    else:
+                        personality = personality + 'F '
+                else:
+                    if count == 12:
+                        if count_of_a > count_of_b:
+                            personality = personality + 'J '
+                        else:
+                            personality = personality + 'P '
+    return render_template('result.html')
+    
 
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+
+
+
 

@@ -13,7 +13,7 @@ def run():
         Question 2:
         With people are you usaully more?
         a. Firm than gentle
-        b, Gentle than firm
+        b. Gentle than firm
         """,
         
         """
@@ -144,8 +144,7 @@ def run():
 def display(personality_type):
     return(f'Your personality type is {personality_type}.')
 
-personality = run()
-print(display(personality))
+
 
 
 
