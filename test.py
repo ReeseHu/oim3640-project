@@ -9,6 +9,7 @@ app = Flask(__name__)
 def display():
     if request.method=='POST':
         result_list=[]
+        i=1
         for i in range(1,13):
             result_list.append(request.form.get(f'{i}'))
         if None not in result_list:

@@ -1,4 +1,4 @@
-result_list=['a','b','b','a','a','b','b','a','a','b','a','a'] # this is a test code
+# result_list=['a','b','b','a','a','b','b','a','a','b','a','a'] # this is a test code
 def run(result_list):
     """
     This function analyzes the result of a personality test and returns the corresponding personality type.
