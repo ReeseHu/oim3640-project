@@ -1,29 +1,27 @@
-# Project Proposal
-Team members:Reese Hu, Hanlu Ma, Sabrina Chen
-## The Big Idea
-For this project, we aim to create a personality test that prompts users to answer a list of questions (i.e. multiple choices) and return their personality type and the corresponding analysis & suggestions. The minimum viable product would be a website that directly prompts to answer the questions and return the corresponding personality type. As for the stretch goal of our project, we intend to further elaborate our website (i.e. add some motions and pictures to make it more appealing) and keep track of our website traffic.
-## Learning Goals
-Throughout this project, we hope that we can improve our ability on integrating the python knowledge and the real life application. We would value this oppotunity on learning what are the feasible opinions to apply python knowledge and how we can transfer our opnions into codes.
-### Individual Goals:
-Hanlu Ma: throughout this project, I hope that my logical thinking abilities on linking every code and combining functions and html pages. 
+# Project Overview
+## Team members
+Sabrina Chen, Reese Hu, Hanlu Ma
+## Big Idea of the Project
+Our project is creating a personality test website that asks the audience to answer a series of multiple choice questions, and returns the result of the corresponding personality type, and provides the interpretations to different personality types.
 
-Sabrina Chen: I hope I can utilize what I learned from classes to real world situations and learn something new and interesting with my teammates throughout the project. 
+The personality test is a very intriguing topic lately. It is often used in psychology to help refine diagnoses as well as in business to assess potential candidates and help build cohesive teams. In terms of  the technicality, we believe that we can integrate what we learned in class about python coding and web design into the process of creation, thus deepen out understanding of python.
 
-Reese Hu: in this projecy, I woulde like to organize the existing knowledge that we learned in class and do more practice on the coding part with more flexibility.
-## Implementation Plan
-Since our topic is about personality test, we should first design the test itself appropriately in terms of questions in the test and the result provided. After that, we can get started on python coding and design of website. We plan to set a value in the code for every choice of the question and calculate the total value when the test is over, then redirecting different result based on the final value. We categorize the value corresponds to a variety of personality descriptions, and we'll also add content such as career suggestions or link to deeper personality interpretation to other website of authority.
-## Project Schedule
-11/10-11/17: discuss and decide the structure of our project - how many functions and htmls to build, how are we going to use each function and html (i.e.what we want to include)
+## Main Features
+Home Page:  The home page includes the instruction of taking the personality test and 12 multiple choice questions. Users can freely fill out their choices for every question.
 
-11/18-11/23: divide the tasks to every member and start working coding
+Result Page: The result page will include a specific personality type based on your selections to the questions in the homepage. Also, the result page will exhibit a detailed interpretation about the personality type shown.
 
-11/24-11/30: finalize the coding part and start working on the final documentation of the product
-## Collaboration Plan
-We plan to use agile development methodology because we believe it can minimize risks such as bugs and increase efficiency by consistently reviewing and improving the code instead of waiting until the last moment. We choose the agile development methodology also due to the fact that the software/application we plan to make is for the purpose of serving our users to explore more about their personalities in an enjoyable way. And thus, consistently receiving feedback from them is essential and keeps us on the right track. To accomplish the goal, we plan to brainstorm together, in the beginning, to agree on the “big picture”, such as questions included in the test and results for the users. And then, each of us will be responsible for part of the project, for example, one person will be responsible for creating the testing page, building a website using flask, or creating HTML pages. After we have a draft of our tasks, which does not necessarily need to be perfectly worked, we will integrate them and maybe show them to friends and professors to ask for feedback. After receiving feedback, we will improve the code. We plan to have two or three drafts and asking feedback before the final version.     
-## Risks
-The biggest content risk we have will be choosing the right questions. There are many personalities test on the internet. It is challenging for us to choose them and come up with creative questions from us at the same time since none of us are psychologists. <br>
-<br>
-The biggest technical risk we have would be using what we learned in a completely different setting. We never learn how to create a personality test in classes but we learned flask and creating forms in HTML. So it would be interesting for us to implement what we learned in new situations. We also probably will learn about new libraries during the project, which will be interesting but challenging.   
+Error Page: The error page will appear as the users forget to answer one or more questions in the homepage. The error page also includes a hyperlink to the home page for the convenience of the test takers. Specifically, after the error page pops up, by clicking "Home Page", the website will redirect to the home page again with a series of questions.
 
-## Additional Course Content
-This project would enhance our understanding and ability on setting filter and the function of flask since they are extensively used. It is a great integration of class materials.
+## Library
+```
+from flask import Flask, render_template, request
+```
+## How to Run the Code
+1. Open Command Prompt and type "pip install flask" if you have not installed before.
+2. Access our github repository at https://github.com/ReeseHu/oim3640-project
+3. Go to test.py and open it up in Visual Studio Code, then run it.
+4. Open up the link (http://127.0.0.1:5000) appears in the terminal and take the test.
+5. You would notice a website page like the following pops up on your computer. Follow the instruction on the website and take the personality test.
+
+
