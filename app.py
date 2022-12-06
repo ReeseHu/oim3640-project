@@ -128,13 +128,3 @@ def quiz():
                 personality = personality + 'P '
         # we are using the answers for question 10-12 (how many choice A and choice B the user picks) to determine the last personality trait ('J' or 'P')
     return render_template('result.html')
-    
-
-
-
-
-
-
-
-
-
