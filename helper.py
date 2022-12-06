@@ -1,4 +1,4 @@
-result_list=['a','a','b','a','a','b','b','a','a','b','a','a'] # this is a test code
+result_list=['a','b','b','a','a','b','b','a','a','b','a','a'] # this is a test code
 def run(result_list):
     """
     This function analyzes the result of a personality test and returns the corresponding personality type.
@@ -8,45 +8,36 @@ def run(result_list):
     # We only have two choices for every question: choice A and choice B
     # The previous two variables records the number of times that a user pick choice A and choice B accordingly
     personality=''
-    for i in range(0,4):
+    count=0
+    for i in result_list:
         if i=="a":
             count_of_a+=1
         else: 
             count_of_b+=1
-    if count_of_a > count_of_b:
-        personality = personality + 'E '
-    else:
-        personality = personality + 'I '
+        count+=1
+        if count == 3:
+            if count_of_a > count_of_b:
+                personality = personality + 'E '
+            else:
+                personality = personality + 'I '
     # we are using the answers for question 1-3 (how many choice A and choice B the user picks) to determine the first personality trait ('E' or 'I')
-    for i in range(4,7):
-        if i=="a":
-            count_of_a+=1
-        else: 
-            count_of_b+=1
-    if count_of_a > count_of_b:
-        personality = personality + 'S '
-    else:
-        personality = personality + 'N '   
+        if count == 6:
+            if count_of_a > count_of_b:
+                personality = personality + 'S '
+            else:
+                personality = personality + 'N '   
     # we are using the answers for question 4-6 (how many choice A and choice B the user picks) to determine the second personality trait ('S' or 'N')
-    for i in range(7,10):
-        if i=="a":
-            count_of_a+=1
-        else: 
-            count_of_b+=1
-    if count_of_a > count_of_b:
-        personality = personality + 'T '
-    else:
-        personality = personality + 'F ' 
+        if count == 9:
+            if count_of_a > count_of_b:
+                personality = personality + 'T '
+            else:
+                personality = personality + 'F ' 
     # we are using the answers for question 7-9 (how many choice A and choice B the user picks) to determine the third personality trait ('T' or 'F')
-    for i in range(10,13):
-        if i=="a":
-            count_of_a+=1
-        else: 
-            count_of_b+=1
-    if count_of_a > count_of_b:
-        personality = personality + 'J '
-    else:
-        personality = personality + 'P ' 
+        if count == 12:
+            if count_of_a > count_of_b:
+                personality = personality + 'J '
+            else:
+                personality = personality + 'P ' 
     # we are using the answers for question 10-12 (how many choice A and choice B the user picks) to determine the last personality trait ('J' or 'P')
     return personality
 
