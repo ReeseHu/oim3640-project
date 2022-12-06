@@ -52,8 +52,8 @@ def descrip(personality):
             return final
 
 
-def display(personality_type):
-    return(f'Your personality type is {personality_type}.')
+# def display(personality_type):
+#     return(f'Your personality type is {personality_type}.')
 
 # personality = run(result_list)
 # print(display(personality))

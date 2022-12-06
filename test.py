@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from quiz2 import run
+from quiz2 import run, descrip
 
 
 app = Flask(__name__)
@@ -9,10 +9,11 @@ app = Flask(__name__)
 def display():
     if request.method=='POST':
         result_list=[]
-        for i in range(0,13):
+        for i in range(1,13):
             result_list.append(request.form.get(f'{i}'))
-            answer=run(result_list)
-        return render_template('result.html',type=answer)
+            personality = run(result_list).strip()
+            answer=descrip(personality)
+        return render_template('result.html',type=answer,personality_answer=personality)
         # except IndexError:
         # # if the input is wrong or not in the database
         #     return render_template('error.html')
