@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from quiz2 import run, descrip
+from helper import run, descrip
 
 
 app = Flask(__name__)
